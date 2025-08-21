@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab6a
+  labels:
+    app: lab6a
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lab6a
+  template:
+    metadata:
+      labels:
+        app: lab6a
+    spec:
+      containers:
+        - name: lab6a
+          image: arunrascall/lab6a:latest
+          ports:
+            - containerPort: 8080
+
